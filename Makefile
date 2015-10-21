@@ -11,8 +11,6 @@
 # * `$(call rwc,img/,*.jpg)` searches the folder `img/` and its subfolder for
 #   JPG graphics.
 #
-# Caveat:
+# Optional whitespace before <path> and <pattern> is permitted.
 #
-# * Only a single pattern is supported; not `$(call rwc,,*.h *.c)`
-#
-rwc = $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwc,$d/,$2))
+rwc = $(wildcard $(addprefix $1,$2)) $(foreach d,$(wildcard $1*),$(call rwc,$d/,$2))
