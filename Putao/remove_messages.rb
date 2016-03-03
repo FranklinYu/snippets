@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+# Ruby 2.0.0 or above
+
 # # Gemfile
 # gem 'nokogiri'
 
