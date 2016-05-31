@@ -95,7 +95,24 @@ def clear_one_page
 
     doc = Nokogiri::HTML response.body
     messages = doc.xpath "//td/a[text()='咱@您了~']"
-    messages.each { |message| delete_message(message, http) }
+    puts "#{messages.length} messages found."
+    10.times do
+      threads = []
+      failure_messages = []
+      messages.each do |message|
+        threads << Thread.new do
+          begin
+            delete_message(message, http)
+          rescue BadResponseError => e
+            puts e.to_s
+            failure_messages << message
+          end
+        end
+      end
+      threads.each { |t| t.join }
+      messages = failure_messages
+      break if messages.empty?
+    end
   end
 end
 
