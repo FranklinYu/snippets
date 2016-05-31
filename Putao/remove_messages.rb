@@ -83,7 +83,7 @@ def delete_message(message, http)
   uri = uri_with_query query
   sync_puts "removing message #{message_id}"
   response = http.get uri.path_with_query, 'Cookie' => cookies_str(COOKIES)
-  raise BadResponseError.new(response) unless response.code.to_i == 302
+  raise BadResponseError.new(response) unless response.is_a? Net::HTTPFound
 end
 
 def clear_one_page
@@ -98,7 +98,7 @@ def clear_one_page
   uri = uri_with_query query
   Net::HTTP.start( uri.host, uri.port, use_ssl: true ) do |http|
     response = http.get uri.path_with_query, 'Cookie' => cookies_str(COOKIES)
-    raise BadResponseError.new(response) unless response.code.to_i == 200
+    raise BadResponseError.new(response) unless response.is_a? Net::HTTPOK
 
     doc = Nokogiri::HTML response.body
     messages = doc.xpath "//td/a[text()='咱@您了~']"
