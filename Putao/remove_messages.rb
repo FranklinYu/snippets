@@ -13,6 +13,13 @@ require 'net/http'
 require 'base64'
 require 'nokogiri'
 require 'yaml'
+require 'thread'
+
+$put_mutex = Mutex.new
+
+def sync_puts(str)
+  $put_mutex.synchronize { puts str }
+end
 
 def read_configuration
   conf = {}
@@ -74,7 +81,7 @@ def delete_message(message, http)
   message_id = URI::decode_www_form( href.query ).assoc('id')[1]
   query = URI.encode_www_form action: 'deletemessage', id: message_id
   uri = uri_with_query query
-  puts "removing message #{message_id}"
+  sync_puts "removing message #{message_id}"
   response = http.get uri.path_with_query, 'Cookie' => cookies_str(COOKIES)
   raise BadResponseError.new(response) unless response.code.to_i == 302
 end
@@ -104,7 +111,7 @@ def clear_one_page
           begin
             delete_message(message, http)
           rescue BadResponseError => e
-            puts e.to_s
+            sync_puts e.to_s
             failure_messages << message
           end
         end
