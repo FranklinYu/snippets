@@ -1,10 +1,5 @@
 #!/usr/bin/ruby
 
-# Ruby 2.0.0 or above
-
-# # Gemfile
-# gem 'nokogiri'
-
 # # .secret.yml
 # uid: (user ID)
 # secure_pass: (value of cookie "c_secure_pass")
