@@ -59,7 +59,7 @@ plist['Tracks'].each_value do |track_info|
     exit false
   end
   track = Track.new track_info['Name'], track_info['Artist']
-  album.disc(track_info['Disc Number'] - 1, track_count: track_info['Track Count'])[track_info['Track Count']] = track
+  album.disc(track_info['Disc Number'] - 1, track_count: track_info['Track Count'])[track_info['Track Number']] = track
 end
 
 root_xml = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
