@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mini_portile2 (2.0.0)
+    nokogiri (1.6.7.1)
+      mini_portile2 (~> 2.0.0.rc2)
+    plist (3.2.0)
+    yard (0.8.7.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nokogiri (~> 1.6.7)
+  plist (~> 3.2.0)
+  yard (~> 0.8.7)
+
+BUNDLED WITH
+   1.11.2
