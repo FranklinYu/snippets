@@ -34,8 +34,7 @@ class Album
     @artist = artist
     @name = name
     @year = year
-    # Type: [Disc]
-    # Each disk on its own sub array.
+    # @type [Array<Disc>]
     @discs = Array.new(disc_count)
   end
 

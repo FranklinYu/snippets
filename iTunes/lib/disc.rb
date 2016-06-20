@@ -15,12 +15,12 @@ class Disc
     end
   end
 
-  # @param [Object] track_count total number of tracks in this disc.
-  # @param [Object] album the album this disc belongs to.
+  # @param [Integer] track_count total number of tracks in this disc.
+  # @param [Album] album the album this disc belongs to.
   def initialize(track_count, album)
-    # Type: Album
-    # the album this disc is affiliated to.
+    # @type [Album] the album this disc is affiliated to
     @album = album
+    # @type [Array<Track>]
     @tracks = Array.new(track_count)
   end
 

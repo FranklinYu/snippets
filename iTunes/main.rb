@@ -40,6 +40,7 @@ plist = Plist::parse_xml(ARGF)
 REQUIRED_PROPERTIES = [
     'Name', 'Album Artist', 'Album', 'Year', 'Disc Count', 'Disc Number', 'Track Count', 'Track Number'
 ]
+# @type [Array<Album>]
 albums = []
 plist['Tracks'].each_value do |track_info|
   missing_property = REQUIRED_PROPERTIES.detect { |key| track_info[key].nil? }
@@ -64,7 +65,9 @@ end
 
 root_xml = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
   xml.albums {
-    albums.each do |album|
+    albums.each do
+    # @type [Album]
+    |album|
       xml.album {
         xml.name album.name
         xml.artist album.artist
