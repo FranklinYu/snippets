@@ -54,7 +54,7 @@ class Album
   # @raise [ConflictingError] if this album and the other one should be the same album, but some data does not match.
   def ==(other)
     if @artist == other.artist and @name == other.name and @year == other.year
-      raise ConflictingError.new(self, other) if self.disc_count != other.disc_count
+      raise ConflictingError.new(self, other) if disc_count != other.disc_count
       true
     else
       false
