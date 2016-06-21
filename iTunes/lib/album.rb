@@ -83,7 +83,7 @@ class Album
   def disc(i, track_count:)
     raise "track number #{i}/#{track_count} invalid" if i >= track_count
     if @discs[i].nil?
-      @discs[i] = Disc.new track_count, self
+      @discs[i] = Disc.new(track_count, self)
     end
     @discs[i]
   end

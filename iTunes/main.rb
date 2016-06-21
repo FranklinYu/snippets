@@ -32,21 +32,21 @@ albums = []
 plist['Tracks'].each_value do |track_info|
   missing_property = REQUIRED_PROPERTIES.detect { |key| track_info[key].nil? }
   unless missing_property.nil?
-    $stderr.puts "Property <#{missing_property}> is missing. Track information dumped below:"
-    $stderr.puts track_info
-    $stderr.puts 'This track is skipped.'
+    $stderr.puts("Property <#{missing_property}> is missing. Track information dumped below:")
+    $stderr.puts(track_info)
+    $stderr.puts('This track is skipped.')
     next
   end
   track_info['Artist'] ||= track_info['Album Artist']
   album = Album.new(track_info['Artist'], track_info['Album'], track_info['Year'], track_info['Disc Count'])
   begin
-    album = albums.ensure album
+    album = albums.ensure(album)
   rescue ErrorBase::ConflictingError => e
-    $stderr.puts e.to_s
-    $stderr.puts e.this, e.other
+    $stderr.puts(e.to_s)
+    $stderr.puts(e.this, e.other)
     exit false
   end
-  track = Track.new track_info['Name'], track_info['Artist']
+  track = Track.new(track_info['Name'], track_info['Artist'])
   album.disc(track_info['Disc Number'] - 1, track_count: track_info['Track Count'])[track_info['Track Number']] = track
 end
 
