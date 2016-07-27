@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         New Userscript
-// @namespace    http://tampermonkey.net/
+// @name         Bitbucket clean up
+// @namespace    https://franklinyu.github.io/
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
-// @match        http://*/*
+// @description  Block the useless "+1" comments.
+// @author       Franklin Yu
+// @include      https://bitbucket.org/site/master/issues/*
 // @grant        none
 // ==/UserScript==
 
