@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Bitbucket clean up
-// @namespace    https://franklinyu.github.io/
+// @namespace    https://github.com/franklinyu/snippets
 // @version      0.1
 // @description  Block the useless "+1" comments.
 // @author       Franklin Yu
