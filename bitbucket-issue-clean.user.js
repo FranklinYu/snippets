@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bitbucket clean up
 // @namespace    https://github.com/franklinyu/snippets
-// @version      0.1
+// @version      0.2.0
 // @description  Block the useless "+1" comments.
 // @author       Franklin Yu
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js
