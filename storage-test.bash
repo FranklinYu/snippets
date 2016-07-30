@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: NUM=25 FOLDER=files LOG_FILE=test.log sh storage-test.bash
+# Usage: CARD='/Volumes/MY CARD' sh storage-test.bash
 
 set -o errexit -o pipefail -o nounset
 
