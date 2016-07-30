@@ -1,6 +1,5 @@
 # my snippets
 
-                                                                                |
 I created this repository just because I do not like the Gist interface, and
 Pastebin do not have version control.
 
