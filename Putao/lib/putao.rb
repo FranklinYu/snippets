@@ -47,11 +47,13 @@ class Putao
     # At the page of the box (inbox, sent, or custom box), the +box+ parameter is the corresponding ID.
     #
     # @param box_id [Integer] index of the box. 1 for inbox, -1 for sent mail.
+    # @param page [Integer] page number starting at 0
     # @return [Array<Message>] the messages
-    def all(box_id: 1)
+    def a_page(box_id: 1, page: 0)
       get_document_with_params(
         action: 'viewmailbox',
-        box: box_id
+        box: box_id,
+        page: page,
       ).xpath('//form[@method="post"]//tr')[1..-3].map do |tr|
         msg_link = tr.element_children[1].element_children.first
         Message.new(
@@ -69,13 +71,15 @@ class Putao
     #
     # @param title [String] exact title of the message
     # @param box_id [Integer] index of the box. 1 for inbox, -1 for sent mail.
+    # @param page [Integer] page number starting at 0
     # @return [Array<Message>] the messages matching the title
-    def matching(title, box_id: 1)
+    def a_page_matching(title, box_id: 1, page: 0)
       get_document_with_params(
         action: 'viewmailbox',
         keyword: title,
         place: 'title',
-        box: box_id
+        box: box_id,
+        page: page
       ).xpath('//form[@method="post"]//tr')[1..-3].map do |tr|
         msg_link = tr.element_children[1].element_children.first
         if msg_link.child.to_s == title
