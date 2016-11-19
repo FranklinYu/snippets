@@ -56,7 +56,7 @@ class Putao
         msg_link = tr.element_children[1].element_children.first
         Message.new(
           title: msg_link.child.to_s,
-          id: URI.decode_www_form(URI.parse(msg_link['href']).query).to_h['id'],
+          id: id_from_url(msg_link['href']),
           sender_id: get_sender(tr),
           time: Time.parse(tr.element_children[3].child.to_s + '+0800')
         )
@@ -81,7 +81,7 @@ class Putao
         if msg_link.child.to_s == title
           Message.new(
             title: msg_link.child.to_s,
-            id: URI.decode_www_form(URI.parse(msg_link['href']).query).to_h['id'],
+            id: id_from_url(msg_link['href']),
             sender_id: get_sender(tr),
             time: Time.parse(tr.element_children[3].child.to_s + '+0800')
           )
@@ -100,7 +100,7 @@ class Putao
       Nokogiri::HTML(r.body.to_s)
     end
 
-    # @param tr [Nokogiri::XML::Element]
+    # @param tr [Nokogiri::XML::Element] the table row
     # @return [Integer, :system] sender ID, or +:system+
     def get_sender(tr)
       # @type td [Nokogiri::XML::Element]
@@ -109,8 +109,14 @@ class Putao
       if td.child.is_a?(Nokogiri::XML::Text)
         :system
       else
-        URI.decode_www_form(URI.parse(td.xpath('.//a/@href').to_s).query).to_h['id']
+        id_from_url(td.xpath('.//a/@href').to_s)
       end
+    end
+
+    # @param url [String]
+    # @return [Integer]
+    def id_from_url(url)
+      URI.decode_www_form(URI.parse(url).query).to_h['id'].to_i
     end
   end
 end
