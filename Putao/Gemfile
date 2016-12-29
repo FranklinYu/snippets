@@ -1,6 +1,0 @@
-source 'https://rubygems.org'
-
-gem 'nokogiri', '~> 1.6.7'
-gem 'http', '~> 2.1.0'
-gem 'rspec', '~> 3.4.0'
-gem 'dotenv', '~> 2.1.1'
