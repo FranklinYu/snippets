@@ -7,9 +7,6 @@ files:
 
 * `Makefile`: user defined functions I may use in the future
 
-* [`bitbucket-issue-clean.user.js`](bitbucket-issue-clean.user.js?raw=true): a
-  script that removes useless "+1" comments.
-
 * `storage-test.bash`: tests whether a storage device (such as an SD card) is
   broken, by store something in, and fetch them out. The card should contain
   enough space for the test. It accepts these options (passed in as environment
