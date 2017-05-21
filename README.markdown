@@ -17,3 +17,7 @@ files:
         in the card. Defaults to `'test-files'`.
       * `$LOG_FILE`: the log file. Defaults to `'log'`. You may want it be
         `/dev/null`.
+
+  * `push-or-show.bash`: build and push Docker image to Docker Hub, or show
+    logs on failure. Require [Semaphore](https://semaphoreci.com/) specific
+    [`docker-cache`](https://semaphoreci.com/docs/docker.html).
