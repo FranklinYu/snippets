@@ -16,4 +16,4 @@ for (let comment of $('.issue-comment').toArray()) {
 		blackList.push(comment.id);
 	}
 }
-console.log("blocked comments:\n", blackList);
+console.info("blocked comments:\n", blackList);
