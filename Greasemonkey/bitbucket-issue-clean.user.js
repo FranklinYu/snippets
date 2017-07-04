@@ -9,19 +9,11 @@
 // @grant        none
 // ==/UserScript==
 
-// required features:
-//  - "for...of" statement
-//  - "let" statement
-
-(function() {
-	'use strict';
-
-	let blackList = [];
-	for (let comment of $('.issue-comment').toArray()) {
-		if ($(comment).find('.comment-content').text().trim().startsWith('+1')) {
-			$(comment).addClass('spam-comment');
-			blackList.push(comment.id);
-		}
+let blackList = [];
+for (let comment of $('.issue-comment').toArray()) {
+	if ($(comment).find('.comment-content').text().trim().startsWith('+1')) {
+		$(comment).addClass('spam-comment');
+		blackList.push(comment.id);
 	}
-	console.log("blocked comments:\n - " + blackList.join("\n - "));
-})();
+}
+console.log("blocked comments:\n - " + blackList.join("\n - "));
