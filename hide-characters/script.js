@@ -18,12 +18,13 @@ String.prototype.escapeRegExp = function() {
 	function generate() {
 		var targetDigit = parseInt($('#target-digit').val());
 		var text = $('#text').val().toLowerCase();
+		var width = parseInt($('#width').val());
 
 		if (CHARACTERS == undefined) {
 			console.error('character set not available');
 			return;
 		}
-		var error = errorMessage(targetDigit, text);
+		var error = errorMessage(targetDigit, text, width);
 		if (error != null) {
 			console.error(error);
 			return;
@@ -44,12 +45,14 @@ String.prototype.escapeRegExp = function() {
 		$('#output').html(output.join('<br>'));
 	}
 
-	function errorMessage(digit, text) {
+	function errorMessage(digit, text, width) {
 		if (isNaN(digit) || digit > 9 || digit < 0)
 			return 'digit is ' + digit;
 		var invalidCharacter = REGEX.exec(text);
 		if (invalidCharacter != null)
 			return 'invalid character' + invalidCharacter;
+		if (isNaN(width) || width < 0)
+			return 'width is ' + width;
 	}
 
 	function randomDigitExcept(digit) {

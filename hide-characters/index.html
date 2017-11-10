@@ -9,11 +9,15 @@
 <body>
 	<div class="parameter">
 		<label for="target-digit">target digit</label>
-		<input id="target-digit" type="number" min="0" max="9"/>
+		<input id="target-digit" type="number" min="0" max="9" value="0"/>
 	</div>
 	<div class="parameter">
 		<label for="text">text</label>
-		<input id="text"/>
+		<input id="text" value="Hello, world!"/>
+	</div>
+	<div class="parameter">
+		<label for="width">width limit (0 for no limit)</label>
+		<input id="width" type="number" value="0"/>
 	</div>
 	<div>
 		<button id="generate-button">generate</button>
