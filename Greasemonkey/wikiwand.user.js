@@ -14,7 +14,7 @@ if (location.pathname === '/w/index.php') {
 	lang_var = null;
 } else {
 	const path_segments = location.pathname.split('/');
-	title = path_segments[2];
+	title = path_segments.slice(2).join('/');
 	if (path_segments[1] === 'wiki')
 		lang_var = null;
 	else
