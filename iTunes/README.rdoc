@@ -1,9 +1,0 @@
-= Tool Convert iTunes Database to XML
-
-iTunes local database can be exported as a property list. This program
-translates the property list into nice XML. It accepts the property list either
-as a command line argument, or as standard input if the argument is missing; it
-prints the XML to standard output. Errors, if any, are printed to standard
-error. Example usage:
-
-  $ ruby main.rb < database.plist > database.xml
