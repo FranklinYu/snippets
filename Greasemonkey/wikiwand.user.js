@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name Lightweight Wikiwand
 // @namespace https://franklinyu.name
+// @description Link to Wikiwand page on Wikipedia (so you don’t need the Wikiwand plug-in)
 // @match https://*.wikipedia.org/*
 // @match https://*.wikipedia.org/w/index.php?*
 // @grant none
