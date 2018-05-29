@@ -2,6 +2,8 @@
 // @name Lightweight Wikiwand
 // @namespace https://franklinyu.name
 // @description Link to Wikiwand page on Wikipedia (less intrusive than redirection).
+// @icon https://upload.wikimedia.org/wikipedia/commons/4/4e/WikiWand_Logo.png
+// @author Franklin Yu
 // @match https://*.wikipedia.org/*
 // @match https://*.wikipedia.org/w/index.php?*
 // @grant none

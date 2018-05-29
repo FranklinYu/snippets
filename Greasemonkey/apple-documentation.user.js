@@ -3,6 +3,7 @@
 // @namespace    https://franklinyu.github.io/
 // @version      0.2
 // @description  create link for classes in code segments
+// @icon         https://commons.wikimedia.org/wiki/File:Apple_Store_logo.svg
 // @author       Franklin Yu
 // @include      https://developer.apple.com/reference/*
 // @grant        none
