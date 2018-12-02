@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name Latest Documentation Link
 // @namespace https://franklinyu.github.io
+// @version 0.1.0
+// @description Link to latest documentation
 // @include https://ruby-doc.org/core-*
 // @include https://ruby-doc.org/stdlib-*
 // @grant none
