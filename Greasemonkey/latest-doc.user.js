@@ -10,8 +10,8 @@
 
 const versionHeader = document.querySelector('#versionheader p')
 if (versionHeader) {
-  const link = document.createElement('a')
-  link.href = location.pathname.replace(/^\/(core|stdlib)-[.\d]+/, '/$1')
-  link.innerText = 'here'
-  versionHeader.innerHTML += ` Latest documentation is available ${link.outerHTML}.`
+	const link = document.createElement('a')
+	link.href = location.pathname.replace(/^\/(core|stdlib)-[.\d]+/, '/$1')
+	link.innerText = 'here'
+	versionHeader.innerHTML += ` Latest documentation is available ${link.outerHTML}.`
 }

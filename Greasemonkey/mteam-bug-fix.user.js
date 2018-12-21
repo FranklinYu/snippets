@@ -9,6 +9,6 @@
 // ==/UserScript==
 
 {
-    let textArea = document.getElementsByName("info")[0];
-    textArea.value = textArea.value.replace(/&amp;/g, '&');
+	let textArea = document.getElementsByName("info")[0];
+	textArea.value = textArea.value.replace(/&amp;/g, '&');
 }
