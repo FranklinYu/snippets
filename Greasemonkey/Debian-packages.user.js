@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name Debian package cross link
+// @name Ubuntu/Debian package cross link
 // @description Link between Debian and Ubuntu package page
 // @namespace https://franklinyu.github.io
 // @version 0.1.0
