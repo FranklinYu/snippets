@@ -5,6 +5,7 @@
 // @version 0.2.0
 // @include https://www.ssllabs.com/ssltest/analyze.html?*
 // @grant none
+// @inject-into content
 // ==/UserScript==
 
 HTMLCollection.prototype.filter = Array.prototype.filter
