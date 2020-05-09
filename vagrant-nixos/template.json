@@ -1,0 +1,27 @@
+{
+    "builders": [{
+        "type": "virtualbox-iso",
+        "name": "unstable",
+        "guest_os_type": "Linux_64",
+        "memory": 1024,
+        "iso_url": "https://releases.nixos.org/nixos/unstable/nixos-20.09pre223023.fce7562cf46/nixos-minimal-20.09pre223023.fce7562cf46-x86_64-linux.iso",
+        "iso_checksum": "8e80b07e332093d6ab9ef3377fb24587fb7d4f2ae9df697f85c615223b1fa882",
+        "boot_command": [
+            "<enter>", "<wait30s>",
+            "sudo systemctl start sshd", "<enter>", "<wait5>",
+            "echo root:root | sudo chpasswd", "<enter>"
+        ],
+        "ssh_username": "root",
+        "ssh_password": "root",
+        "shutdown_command": "shutdown now"
+    }],
+    "provisioners": [{
+        "type": "file",
+        "source": "configuration.patch",
+        "destination": "/tmp/"
+    },{
+        "type": "shell",
+        "script": "install-nixos.sh"
+    }],
+    "post-processors": ["vagrant"]
+}
