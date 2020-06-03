@@ -15,6 +15,7 @@ mount /dev/disk/by-label/nixos /mnt
 
 nixos-generate-config --root /mnt 2>&1
 (cd /mnt && patch -p 1 < /tmp/configuration.patch)
+mv /tmp/vagrant-configuration.nix /mnt/etc/nixos/
 nixos-install --no-root-passwd
 
 echo root:vagrant | chpasswd --root /mnt

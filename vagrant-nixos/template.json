@@ -20,6 +20,10 @@
         "source": "configuration.patch",
         "destination": "/tmp/"
     },{
+        "type": "file",
+        "source": "vagrant-configuration.nix",
+        "destination": "/tmp/"
+    },{
         "type": "shell",
         "script": "install-nixos.sh"
     }],
