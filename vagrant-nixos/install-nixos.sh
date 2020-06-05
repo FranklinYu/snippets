@@ -18,8 +18,6 @@ nixos-generate-config --root /mnt 2>&1
 mv /tmp/vagrant-configuration.nix /mnt/etc/nixos/
 nixos-install --no-root-passwd
 
-echo root:vagrant | chpasswd --root /mnt
-
 ssh_dir=/mnt/home/vagrant/.ssh
 mkdir --mode=0700 --verbose $ssh_dir
 version_pin=7ffbf85c1d9249c156f3140fe0d6f8df5c084877
