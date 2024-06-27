@@ -1,1 +1,1 @@
-exclude: [hide-characters/ReadMe.markdown]
+exclude: [ReadMe.markdown, hide-characters/ReadMe.markdown]
