@@ -6,12 +6,12 @@ This is the directory for GitHub Pages.
 
 It accepts only one parameter `url`. Example:
 
-https://franklinyu.github.io/snippets/from-GitHub-raw.html?url=https://raw.githubusercontent.com/FranklinYu/snippets/master/docs/_config.yml
+https://franklinyu.github.io/snippets/from-GitHub-raw?url=https://raw.githubusercontent.com/FranklinYu/snippets/master/docs/_config.yml
 
 It is recommended to configure search engine for browsers with following URL:
 
 ```plain
-https://franklinyu.github.io/snippets/from-GitHub-raw.html?url=%s
+https://franklinyu.github.io/snippets/from-GitHub-raw?url=%s
 ```
 
 It is supported on [Chrome](https://support.google.com/chrome/answer/95426) and
